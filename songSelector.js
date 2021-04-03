@@ -2,7 +2,7 @@ function loadRandSong(){
 	var videoCodes = ["iZ_P3F3nA1U",
 			  "f7qPqxsFlVg",
 			  "hLRo06NCOAo",
-			  "Il7G4KUuHg",
+			  "66aUCFCAMLM",
 			  "M2wB0skdJ5o",
 			  "pJtlLzsDICo",
 			  "CvFH_6DNRCY",
