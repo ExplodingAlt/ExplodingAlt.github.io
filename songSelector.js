@@ -14,7 +14,7 @@ function loadRandSong(){
 			  "yqem6k_3pZ8",
 			 ];
 	var x;
-	x = Math.floor((Math.random() * 10) + 1);
+	x = Math.floor((Math.random() * 15) + 1);
 	var song = document.getElementById("song");
 	console.log(videoCodes[x])
 	if(videoCodes[x] != undefined) {
