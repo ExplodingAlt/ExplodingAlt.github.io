@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<html>
+	<body id = "body">
+		<h3 style = "position:absolute;left:45%; font-size:100px">Gullible</h3>
+		<h2 id = "smile" style = "position:absolute;left:47%;top:25%;font-size:100px" >☺☺☺</h2>
+		<script>
+				var i = 1;                  //  set your counter to 1
+				var whiteSmile = true
+				function myLoop() {         //  create a loop function
+				  setTimeout(function() {  
+					if (whiteSmile == true){
+						whiteSmile = false //  call a 3s setTimeout when the loop is called
+						document.getElementById("smile").innerHTML = "☻☻☻"
+					
+					}  else{
+						whiteSmile = true
+						document.getElementById("smile").innerHTML = "☺☺☺"
+					} //  your code here
+					i++;                    //  increment the counter
+					if (i < 10) {           //  if the counter < 10, call the loop function
+					  myLoop();             //  ..  again which will trigger another 
+					}                       //  ..  setTimeout()
+				  }, 1000)
+				}
+
+				myLoop();       
+		</script>
+	</body>
+</html>
