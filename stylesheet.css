@@ -10,3 +10,11 @@
     font-style: normal;
 
 }
+
+body {
+     font-family: 'block_tilt_brkregular';
+    src: url('bloktilt-webfont.woff2') format('woff2'),
+         url('bloktilt-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;   
+}
