@@ -1,6 +1,6 @@
 function loadRandSong(){
 	var videoCodes = ["iZ_P3F3nA1U",
-			  "f7qPqxsFlVg",
+			  "iZ_P3F3nA1U",
 			  "hLRo06NCOAo",
 			  "66aUCFCAMLM",
 			  "M2wB0skdJ5o",
