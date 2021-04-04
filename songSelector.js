@@ -1,3 +1,4 @@
+var pastCode = 0
 function loadRandSong(){
 	var videoCodes = ["iZ_P3F3nA1U",
 			  "iZ_P3F3nA1U",
@@ -17,10 +18,14 @@ function loadRandSong(){
 	x = Math.floor((Math.random() * 15) + 1);
 	var song = document.getElementById("song");
 	console.log(videoCodes[x])
-	if(videoCodes[x] != undefined) {
+	if(videoCodes[x] != undefined && x != pastCode) {
+		pastCode = x
 		song.src = "https://www.youtube.com/embed/" + videoCodes[x];
 	} else{
-		song.src = "https://www.youtube.com/embed/VjCyVfBiwpE"	
+		while(pastCode == x) {
+			x = Math.floor((Math.random() * 15) + 1);
+		}
+		song.src = "https://www.youtube.com/embed/" + videoCodes[x];
 	}
 	
 }
