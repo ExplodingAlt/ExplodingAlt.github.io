@@ -24,7 +24,7 @@ function loadRandSong(){
 			  "tdbhU7EHAhc"
 			 ];
 	var x;
-	var Randomness = 25;
+	var Randomness = videoCodes.length;
 	x = Math.floor((Math.random() * Randomness) + 1);
 	var song = document.getElementById("song");
 	console.log(videoCodes[x])
