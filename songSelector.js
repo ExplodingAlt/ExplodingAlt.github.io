@@ -28,7 +28,7 @@ function loadRandSong(){
 	x = Math.floor((Math.random() * Randomness) + 1);
 	var song = document.getElementById("song");
 	console.log(videoCodes[x])
-	if(videoCodes[x] != undefined && x != pastCode) {
+	if(videoCodes[x] != "undefined" && x != pastCode) {
 		pastCode = x
 		song.src = "https://www.youtube.com/embed/" + videoCodes[x];
 	} else{
