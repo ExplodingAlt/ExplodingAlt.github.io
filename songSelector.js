@@ -13,9 +13,19 @@ function loadRandSong(){
 			  "zZEumf7RowI",
 			  "f3bzqzspXPI",
 			  "yqem6k_3pZ8",
+			  "1UMxhZlDzOs",
+			  "Vtichb7DLkI",
+			  "bbMv42mBRGY",
+			  "yYo6dbeBtso",
+			  "Sf5nos9-Dg4",
+			  "UTaszc1Q6eY",
+			  "849q2h1OkKs",
+			  "LwntIpXvV",
+			  "tdbhU7EHAhc"
 			 ];
 	var x;
-	x = Math.floor((Math.random() * 15) + 1);
+	var Randomness = 25;
+	x = Math.floor((Math.random() * Randomness) + 1);
 	var song = document.getElementById("song");
 	console.log(videoCodes[x])
 	if(videoCodes[x] != undefined && x != pastCode) {
@@ -23,7 +33,7 @@ function loadRandSong(){
 		song.src = "https://www.youtube.com/embed/" + videoCodes[x];
 	} else{
 		while(pastCode == x) {
-			x = Math.floor((Math.random() * 15) + 1);
+			x = Math.floor((Math.random() * Randomness) + 1);
 		}
 		song.src = "https://www.youtube.com/embed/" + videoCodes[x];
 	}
