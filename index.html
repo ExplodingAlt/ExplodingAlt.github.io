@@ -8,14 +8,13 @@
 	body{
 		color:white;
 	}
-	musicEmbed{
-		width: 200%;
-		height: 200px;
-		overflow: auto;		
+	iFrame{
+	    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+	    scrollbar-width: none;  /* Firefox */	
+		
 	}
-	musicContent{
-		width: 300px;
-		overflow: hidden;
+	iFrame::-webkit-scrollbar { 
+   		 display: none;
 	}
 	@font-face {
     		font-family: 'block_tilt_brkregular';
