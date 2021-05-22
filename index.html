@@ -8,6 +8,15 @@
 	body{
 		color:white;
 	}
+	musicEmbed{
+		width: 200%;
+		height: 200px;
+		overflow: auto;		
+	}
+	musicContent{
+		width: 300px;
+		overflow: hidden;
+	}
 	@font-face {
     		font-family: 'block_tilt_brkregular';
     		src: url('bloktilt-webfont.woff2') format('woff2'),
@@ -53,7 +62,11 @@
 			<h1 style="position:absolute; left:80%; top:56%;">Music</h1>
 		</a>
 		<!-- <h2 style="position:absolute; left:82%; top:61%;">Music</h2> -->
-		<iframe src="https://n4me.net/musicEmbed" style="position:absolute; left:80%; top:65%;overflow: hidden;"> </iframe>
+		<div id="musicContent">
+			<div id="musicEmbed">
+				<iframe src="https://n4me.net/musicEmbed" style="position:absolute; left:80%; top:65%;overflow: hidden;"> </iframe>
+			</div>
+		</div>
 		<a href="https://trees.tk/"style="position:absolute; left:82%; top:29%;">https://trees.tk/</a>
 		<script type="text/javascript">
 		  var _gauges = _gauges || [];
