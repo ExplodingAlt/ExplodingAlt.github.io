@@ -44,9 +44,59 @@
 	font-size: 200%;
 	font-family: textFont;
 }
+.Info {
+	text-align: center;
+	color: whitesmoke;
+	font-size: 125%;
+}
 br {
    display: block;
    margin: 10px 0;
+}
+.DownloadButton {
+  border: none;
+  color: whitesmoke;
+  padding: 15px 32px;
+  text-align: center;
+  font-family: textFont;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: grey;
+}
+.SignUpButton {
+  border: none;
+  color: whitesmoke;
+  padding: 10px 22px;
+  text-align: center;
+  font-family: textFont;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: grey;
+}
+
+.ChessImg {
+	width: 1px;
+}
+.ChessBoard {
+		padding-left: 0;
+	  padding-right: 0;
+	  margin-left: auto;
+	  margin-right: auto;
+	  display: block;
+}
+.LargeBr {
+	display: block;
+   margin: 200px 0;
+}
+.MediumBr {
+	display: block;
+   margin: 100px 0;
 }
 .body {
 	background-image: url(Images/backing.png)
