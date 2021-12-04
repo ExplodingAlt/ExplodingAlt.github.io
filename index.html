@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>N4ME</title>
+	<meta charset="UTF-8" />
+</head>
+<html>
+	<body class="body" id="body">
+		<div id="Content">
+			<h1 class = "MainTitle" id="Title">N4ME.NET</h1>
+			<div style="float:right; width:20%;" id="mainCategories">
+				<h2 class="Category">My Programs</h2>
+				<a href="RelentlessLogic.html" class="Link">Relentless Logic</a>
+				<br>
+				<a href="websynth.html" class="Link">Websynth</a>
+				<br>
+				<a href="RCT.html" class="Link">A Regular Christmas Tree</a>
+				<br>
+				<h2 class="Link">POLYWORLD - Coming Soon</h2>
+				<br>
+				<h2  class="Category">Music</h2>
+				<a href="Music.html"  class="Link">Creations</a>
+				<br>
+				<h2  class="Category">Other Websites</h2>
+				<a href="https://trees.tk"  class="Link">12/12/2021</a>
+			</div>
+			<br class="LargeBr"><br class="LargeBr">
+			<div style="text-align: center;" id="bottomInfo">
+				<h3 class="BottomInfo" >Since April 2021</h3>
+			</div>
+			<h3 style="text-align: right; color: white; font-family: textFont;" id="piSymbol">π</h3>
+		</div>
+		<div id="InputPage" style="display: none; position: absolute; top:45%; left:45%; font-family: textFont; color: white;">
+			<h3>ENTER THE PASSWORD</h3>
+			<input type="input" name=""  id="PassInput" value="">
+		</div>
+	</body>
+	<script type="text/javascript" src="ClientMain.js"></script>
+	<script type="text/javascript" src="snowFall.js"></script>
+	<script type="text/javascript">
+		var symbol = document.getElementById("piSymbol")
+		var keysPressed = []
+		symbol.addEventListener('click', function()
+			{ 
+				function changeDisplay(type){
+					document.getElementById("Content").style.display = type
+				}
+				var passInput = document.getElementById("PassInput")
+				var inputPage = document.getElementById("InputPage")
+				for(var i = 0;i<30;i++){
+					setTimeout(function(){
+						changeDisplay("none")
+					},i*25)
+					setTimeout(function(){
+						changeDisplay("")
+					},i*50)
+					setTimeout(function () {
+						changeDisplay("none")
+					},i*75)
+				}
+				setTimeout(function () {
+					inputPage.style.display = ""
+				},4000)
+				document.getElementById("PassInput").addEventListener('keydown', function(event){
+					if(event.keyCode == 13){
+						if(passInput.value.toLowerCase() == "joshua")
+						inputPage.style.display = "none"
+						reverse();
+						for(var i = 0;i<30;i++){
+							setTimeout(function(){
+								changeDisplay("")
+							},i*25)
+							setTimeout(function(){
+								changeDisplay("none")
+							},i*50)
+							setTimeout(function () {
+								changeDisplay("")
+							},i*75)
+						}
+
+					}
+				})
+				
+			}, false);
+	</script>
+</html>
