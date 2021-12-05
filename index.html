@@ -24,11 +24,10 @@
 				<h2  class="Category">Other Websites</h2>
 				<a href="https://trees.tk"  class="Link">12/12/2021</a>
 			</div>
-			<br class="LargeBr"><br class="LargeBr">
 			<div style="text-align: center;" id="bottomInfo">
-				<h3 class="BottomInfo" >Since April 2021</h3>
+				<h3 class="BottomInfo" style="position: fixed; bottom: 0; width:100%; text-align: center" >Since April 2021</h3>
 			</div>
-			<h3 style="text-align: right; color: white; font-family: textFont;" id="piSymbol">π</h3>
+			<h3 style="position: fixed; bottom: 0; width:98%; text-align: right; color: white; font-family: textFont;" id="piSymbol">π</h3>
 		</div>
 		<div id="InputPage" style="display: none; position: absolute; top:45%; left:45%; font-family: textFont; color: white;">
 			<h3>ENTER THE PASSWORD</h3>
@@ -63,21 +62,22 @@
 				},4000)
 				document.getElementById("PassInput").addEventListener('keydown', function(event){
 					if(event.keyCode == 13){
-						if(passInput.value.toLowerCase() == "joshua")
-						inputPage.style.display = "none"
-						reverse();
-						for(var i = 0;i<30;i++){
-							setTimeout(function(){
-								changeDisplay("")
-							},i*25)
-							setTimeout(function(){
-								changeDisplay("none")
-							},i*50)
-							setTimeout(function () {
-								changeDisplay("")
-							},i*75)
+						if(passInput.value.toLowerCase() == "joshua"){
+							window.open("Files/n4me.mid")
+							inputPage.style.display = "none"
+							reverse();
+							for(var i = 0;i<30;i++){
+								setTimeout(function(){
+									changeDisplay("")
+								},i*25)
+								setTimeout(function(){
+									changeDisplay("none")
+								},i*50)
+								setTimeout(function () {
+									changeDisplay("")
+								},i*75)
+							}
 						}
-
 					}
 				})
 				
