@@ -48,6 +48,7 @@ function reverse(){
 	yOffset = window.innerHeight
 }
 
-setInterval(generateSnowflake,1000,snowFlake,0)
-setInterval(generateSnowflake,1300,snowFlake,0)
-setInterval(generateSnowflake,900,snowFlake,0)
+//commented out when no snow
+//setInterval(generateSnowflake,1000,snowFlake,0)
+//setInterval(generateSnowflake,1300,snowFlake,0)
+//setInterval(generateSnowflake,900,snowFlake,0)
