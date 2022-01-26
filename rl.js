@@ -2,6 +2,7 @@ var canvas = document.getElementById("RL")
 var ctx = canvas.getContext("2d");
 
 var buttons = ["up","dn","rst","lt","rt"]
+var steps = []
 
 var bombs = []
 
@@ -85,6 +86,11 @@ function drawGame(){
 	ctx.font = "20px clacon"
 	
 	allowControl = false
+	for(step in steps){
+		ctx.font = "50px clacon"
+		ctx.fillText("X",steps[step]["X"]*65+25,steps[step]["Y"] * 65-15,50,50)
+	}
+	ctx.font = "20px clacon"
 	if(won){
 		drawBombs()
 		ctx.font = "200px clacon"
@@ -120,6 +126,7 @@ function drawGame(){
 
 		}
 		document.getElementById("bsAround").innerHTML = "bombs around you: "+bombsAround() 
+		steps.push({"X":Player["X"],"Y":Player["Y"]+1})
 		ctx.drawImage(forwardImg,Player["X"]*65,Player["Y"]*65,playerXSize,playerYSize)
 		allowControl = true
 	},300)
@@ -146,9 +153,9 @@ function drawBombs(){
 }
 
 function genBombs(){
-	for(var x=0;x<20;x++){
+	for(var x=0;x<13;x++){
 		bombPosition = {"X":Math.floor(Math.random() * 10),"Y":Math.floor(Math.random() * 10)}
-		if(bombPosition != {"X":0,"Y":0} || bombPosition != {"X":9,"Y":9} || bombPosition != {"X":1,"Y":1} || bombPosition != {"X":0,"Y":1}){
+		if(bombPosition != {"X":0,"Y":0} && bombPosition != {"X":9,"Y":9} && bombPosition != {"X":1,"Y":1}&& bombPosition != {"X":0,"Y":1}){
 			bombs.push(bombPosition)
 		}
 	}
