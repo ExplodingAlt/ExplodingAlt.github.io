@@ -18,6 +18,8 @@ var prelude = new Audio('Files/Prelude.mp3');
 var playerXSize = canvas.width/10
 var playerYSize = canvas.width/10
 
+var IllegalPositions = [{"X":0,"Y":0},{"X":1,"Y":0},{"X":9,"Y":9},{"X":9,"Y":8}]
+
 var forwardImg = document.getElementById("forwardimg")
 var bombImg = document.getElementById("bombimg")
 var deadImg = document.getElementById("deadimg")
@@ -27,7 +29,6 @@ var Player = {"X":0,"Y":0}
 function movePlayer(player,direction){
 	var newPlayer = player;
 	if(direction == "rst"){
-		console.log("reset")
 		playGame()	
 		return "reset"
 	}
@@ -86,10 +87,6 @@ function drawGame(){
 	ctx.font = "20px clacon"
 	
 	allowControl = false
-	for(step in steps){
-		ctx.font = "50px clacon"
-		ctx.fillText("X",steps[step]["X"]*65+25,steps[step]["Y"] * 65-15,50,50)
-	}
 	ctx.font = "20px clacon"
 	if(won){
 		drawBombs()
@@ -99,6 +96,13 @@ function drawGame(){
 		return false
 	}
 	setTimeout(function(){
+		for(step in steps){
+			if(steps[step]["X"] == Player["X"] && steps[step]["Y"] == Player["Y"]+1){
+			}else{
+				ctx.font = "50px clacon"
+				ctx.fillText("X",steps[step]["X"]*65+25,steps[step]["Y"] * 65-15,50,50)		
+			}
+		}
 		for(bomb in bombs){
 			if(bombs[bomb]["X"] === Player["X"] && bombs[bomb]["Y"] === Player["Y"] && bombs[bomb] != {"X":0,"Y":0}){
 				ctx.font = "200px clacon"
@@ -152,10 +156,19 @@ function drawBombs(){
 	}
 }
 
+function isBombIllegal(bombPos,illegalPos){
+	for(position in illegalPos){
+		if(bombPos["X"] == illegalPos[position]["X"] && bombPos["Y"] == illegalPos[position]["Y"]){
+			return true
+		}
+	}
+	return false
+}
+
 function genBombs(){
 	for(var x=0;x<13;x++){
 		bombPosition = {"X":Math.floor(Math.random() * 10),"Y":Math.floor(Math.random() * 10)}
-		if(bombPosition != {"X":0,"Y":0} && bombPosition != {"X":9,"Y":9} && bombPosition != {"X":1,"Y":1}&& bombPosition != {"X":0,"Y":1}){
+		if(isBombIllegal(bombPosition,IllegalPositions) == false){
 			bombs.push(bombPosition)
 		}
 	}
@@ -164,12 +177,12 @@ function genBombs(){
 function playGame(){
 	// Variables
 	won = false
+	steps = []
 	odeToJoy.pause();
 	odeToJoy.currentTime = 0;
 	prelude.pause();
 	prelude.currentTime = 0;
 	Player = {"X":0,"Y":0}
-	console.log(Player)
 	allowControl = true
 	bombs = []
 
@@ -188,8 +201,6 @@ function playGame(){
 
 }
 for(button in buttons){
-	console.log(document.getElementById(buttons[button]))
-	console.log(buttons[button])
 	innitButtons(buttons[button])
 }
 ctx.beginPath();
