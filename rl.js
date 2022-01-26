@@ -207,3 +207,4 @@ ctx.beginPath();
 ctx.stroke();
 
 playGame();
+ctx.drawImage(forwardImg,Player["X"]*65,Player["Y"]*65,playerXSize,playerYSize)
