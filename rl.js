@@ -133,7 +133,7 @@ function drawGame(){
 		steps.push({"X":Player["X"],"Y":Player["Y"]+1})
 		ctx.drawImage(forwardImg,Player["X"]*65,Player["Y"]*65,playerXSize,playerYSize)
 		allowControl = true
-	},300)
+	},0)
 	ctx.fillText("WIN",9.3*65,9.7*65,50,50)
 }
 
