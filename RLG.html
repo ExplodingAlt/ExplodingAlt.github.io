@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>N4ME - Relentless Logic</title>
+
+	<meta charset="UTF-8" content="Imagine minesweeper but cooler">  
+</head>
+<html>
+	<body class="body" id="body">
+		<a href="index.html" class = "Title">N4ME.NET</a><br>
+		<div id="content" style="size: 25%;">
+			<h1 style="text-align:center;" class="MainTitle">Relentless Logic</h1>
+			<canvas  width="650" height="650" id="RL" style=" border:5px solid #282828;padding-left: 0; padding-right: 0; margin-left: auto; margin-right: auto;display: block;">
+				Your browser does not support the HTML5 canvas tag
+			</canvas>
+			<h2 class="MainTitle" id="bsAround">bombs around you: 0</h2>
+			<div style="text-align: center;">
+				<button id="up" class="DownloadButton">⇧</button><br style="margin-bottom: -.5em;">
+				<button id="lt" class="DownloadButton">⇦</button>
+				<button id="rst" class="DownloadButton">↺</button>
+				<button id="rt" class="DownloadButton">⇨</button>	<br style="margin-bottom: -.5em;">		
+				<button id="dn" class="DownloadButton">⇩</button>
+			</div>
+		</div>
+		<br><br>
+		<div style="text-align:center">
+			<h3 class="BottomInfo"  >Since April 2021</h3>
+		</div>
+	</body>
+	<div style="display: none;">
+		<img id="forwardimg"src="Images/forward.png">
+		<img id="bombimg"src="Images/bomb.png">
+		<img id="deadimg"src="Images/dead.png">
+		<audio id="odeaudio"src="Files/OdeToJoy.mp3">
+	</div>
+	<script type="text/javascript" src="snowFall.js"></script>
+	<script type="text/javascript" src="rl.js"></script>
+	<script type="text/javascript" src="ClientMain.js"></script>
+</html>
