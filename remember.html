@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+	<body style="background-image: url('visual/padlockdark.png');">
+		<div style="text-align: center; vertical-align: middle;">
+			<img id="gramophone" src="visual/gram.png" style="width: 10%">
+		</div>			
+		<audio id = "record" src="visual/spring.mp3"></audio>
+		<audio id = "record2" src="visual/movementtwo.mp3"></audio>
+		<audio id = "record3" src="visual/finale.mp3"></audio>
+		<audio id = "record4" src="visual/remember.mp3"></audio>
+	</body>
+</html>
+<script type="text/javascript">
+	var gram = document.getElementById("gramophone");
+	var record = document.getElementById("record");
+	var record2 = document.getElementById("record2")
+	var record3 = document.getElementById("record3")
+	var record4 = document.getElementById("record4")
+	var played = false;
+	gram.addEventListener("click", function(){
+  		if(played == false){
+  			played = true
+  			record.play()
+  			gram.style.width = "13%"
+  			setTimeout(function(){record2.play() 
+
+  				setTimeout(function(){
+  					record3.play()
+  					setTimeout(function(){
+  						record4.play()
+  					},record.duration + record2.duration + record3.duration *1000)
+  				}, record.duration+record2.duration*1000)
+  		},record.duration*1000)
+  			
+  			
+
+  		}
+	}); 
+</script>
